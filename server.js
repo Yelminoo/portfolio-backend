@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 // In server.js (for the server)
+const request = require("request");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -12,10 +13,6 @@ app.use(express.json());
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
-
-const express = require("express");
-const bodyParser = require("body-parser");
-const request = require("request");
 
 // Verify the webhook
 app.get("/webhook", (req, res) => {
