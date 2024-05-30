@@ -5,7 +5,7 @@ const path = require("path");
 const request = require("request");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 const nodemailer = require("nodemailer");
 //require("dotenv").config({ path: path.resolve(__dirname, "./.env") }); // Load environment variables from root directory
 app.use(cors());
