@@ -167,6 +167,12 @@ app.get("/api", (req, res) => {
     email: process.env.EMAIL_USER,
   });
 });
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello from the server!",
+    email: process.env.EMAIL_USER,
+  });
+});
 
 // if (process.env.NODE_ENV === "production") {
 //   console.log("process.env" + process.env.NODE_ENV);
