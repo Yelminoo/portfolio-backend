@@ -1,12 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
+import express from "express";
+import cors from "cors";
+import path from "path";
 // In server.js (for the server)
-const request = require("request");
-
+import request from "request";
+import dotenv from "dotenv";
 const app = express();
 const port = 5000;
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
+dotenv.config();
 //require("dotenv").config({ path: path.resolve(__dirname, "./.env") }); // Load environment variables from root directory
 app.use(cors());
 app.use(express.json());
@@ -185,6 +186,8 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+  console.log(process.env.EMAIL_USER, "email usre");
+  console.log(process.env.EMAIL_PASS, "email pass");
 });
 
 export default app;
